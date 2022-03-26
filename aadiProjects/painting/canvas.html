@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="canvas.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Painting</title>
+</head>
+
+<body>
+    <h1>The Painting Canvas</h1>
+    <canvas>
+    </canvas>
+    <menu>
+        <div class="colorPalette">
+            <span class="black active" style="background-color: black;"></span>
+            <span class="red" style="background-color: red;"></span>
+            <span class="blue" style="background-color: blue;"></span>
+            <span class="green" style="background-color: rgb(0, 255, 0);"></span>
+            <span class="yellow" style="background-color: yellow;"></span>
+            <span class="eraser"><i class="fas fa-eraser"></i></span>
+        </div>
+        <div class="buttons">
+            <button id="clear">Clear</button>
+            <button id="undo">Undo</button>
+            <!-- <button id="redo">Redo</button> -->
+        </div>
+        <div class="penWidthSlider">
+            <div class="sliderContainer">
+                <input type="range" class="widthRangeVisible" max="100" min="1" value="10">
+                <input type="range" class="widthRangeHidden" max="100" min="1" value="10">
+                <span class="sliderThumb">10
+            </div>
+        </div>
+        </div>
+        <!-- <span class="cursor"></span> -->
+    </menu>
+    <script>
+        window.addEventListener("load", () => {
+            //Global Variables declaration
+            let canvas = document.querySelector("canvas");
+            let ctx = canvas.getContext("2d");
+            canvas.width = window.innerWidth / 1.5;
+            canvas.height = window.innerHeight / 1.2;
+            let clientRect = canvas.getBoundingClientRect();
+            let canvasLeftPos = clientRect.left;
+            let canvasTopPos = clientRect.top;
+            let span = document.querySelectorAll(".colorPalette span");
+            let widthRangeHidden = document.querySelector(".widthRangeHidden");
+            let penWidth = widthRangeHidden.value;
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = penWidth;
+            hasStarted = false;
+            let prevClickedElement = document.querySelector(".black");
+            let eraser = document.querySelector(".eraser");
+            let sliderThumb = document.querySelector(".sliderThumb");
+            let clear = document.querySelector("#clear");
+            let undo = document.querySelector("#undo");
+            // let redo = document.querySelector("#redo");
+            let undoArray = [];
+            // let redoArray = [];
+            let hasDrawn = false;
+            let index = -1;
+            let highestIndex = -1;
+            // let cursor = document.querySelector(".cursor");
+            //Functions
+            function ChangeSizeWithSlider() {
+                widthRangeHidden.addEventListener("change", () => {
+                    penWidth = widthRangeHidden.value;
+                    ctx.lineWidth = penWidth;
+                })
+            }
+            function startDrawing() {
+                hasStarted = true;
+                ctx.beginPath();
+                event.preventDefault();
+            }
+            function draw(e) {
+                let activeColor = document.querySelector(".active");
+                if (eraser != activeColor) {
+                    ctx.strokeStyle = getComputedStyle(activeColor).backgroundColor;
+                }
+                else {
+                    ctx.strokeStyle = "white";
+                }
+                if (hasStarted == false) return;
+                if (e.clientX == null) {
+                    xPos = e.touches[0].clientX - canvasLeftPos;
+                    yPos = e.touches[0].clientY - canvasTopPos;
+                }
+                else {
+                    xPos = e.clientX - canvasLeftPos;
+                    yPos = e.clientY - canvasTopPos;
+                }
+                ctx.lineTo(xPos, yPos);
+                ctx.moveTo(xPos, yPos);
+                ctx.lineCap = "round";
+                ctx.stroke();
+                event.preventDefault();
+                hasDrawn = true;
+            }
+            function endDrawing(e) {
+                if (hasDrawn == true) {
+                    imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    undoArray.push(imgData);
+                    // redoArray.push(imgData);
+                    index += 1;
+                    if (index > highestIndex) {
+                        highestIndex = index;
+                    }
+                    hasDrawn = false;
+                }
+                hasStarted = false;
+                event.preventDefault();
+            }
+            function colorChange() {
+                span.forEach(element => {
+                    element.addEventListener("click", () => {
+                        prevClickedElement.classList.remove("active");
+                        prevClickedElement = element;
+                        element.classList.toggle("active");
+                    });
+                });
+            }
+            function sliderChange() {
+                sliderThumbPos = (78 / 100 * widthRangeHidden.value) + "%";
+                sliderThumb.style.left = sliderThumbPos;
+                sliderThumb.innerHTML = widthRangeHidden.value;
+            }
+            function clearCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                undoArray = []
+                index = -1;
+            }
+            function undoLast() {
+                if (index <= 0) {
+                    clearCanvas();
+                }
+                else {
+                    undoArray.pop();
+                    index -= 1;
+                    ctx.putImageData(undoArray[index], 0, 0);
+                }
+            }
+            //Redo functionality Adding(Uncompleted)
+            // function redoLast() {
+            //     if (index < highestIndex) {
+            //         index += 1;
+            //         ctx.putImageData(redoArray[index], 0, 0);
+            //         for(let i = 0 ; i<index; i++)
+            //         {
+            //             undoArray[i]=redoArray[i];
+            //         }
+            //     }
+            // }
+            // function moveCursor(e) {
+            //     cursor.style.left = e.pageX + "px";
+            //     cursor.style.top = e.pageY + "px";
+            //     cursor.style.width = widthRangeHidden.value + "px";
+            //     cursor.style.height = widthRangeHidden.value + "px";
+            // }
+            // Main
+            array = [];
+            ChangeSizeWithSlider()
+            colorChange()
+            canvas.addEventListener("mousedown", startDrawing);
+            canvas.addEventListener("touchstart", startDrawing);
+            canvas.addEventListener("mousemove", draw);
+            canvas.addEventListener("touchmove", draw);
+            canvas.addEventListener("mouseup", endDrawing);
+            canvas.addEventListener("mouseleave", endDrawing);
+            canvas.addEventListener("touchend", endDrawing);
+            widthRangeHidden.addEventListener("input", sliderChange);
+            clear.addEventListener("click", clearCanvas);
+            // document.addEventListener("mousemove", moveCursor);
+            undo.addEventListener("click", undoLast);
+            redo.addEventListener("click", redoLast);
+        })
+    </script>
+</body>
+
+</html>

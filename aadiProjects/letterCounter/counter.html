@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="counter.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Live character counter</h1>
+            <textarea name="" id="area" cols="45" rows="15"></textarea>
+            <p>Total Characters: <span class="count">0</span></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("keyup",()=>{
+        content = document.querySelector("#area").value;
+        count = document.querySelector(".count");
+        characterLength = content.length;
+        count.innerHTML = characterLength;
+        })
+    </script>
+</body>
+</html>

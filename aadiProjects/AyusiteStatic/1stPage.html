@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="1stPage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIN</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main1">
+            <h1>AYUSITE</h1>
+            <div class="content">
+            <p>Lorem ipsum dolor sit ametoluptas aliquam! Officia consequatur totam non molestias provident deleniti deserunt!</p>                
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing sed accusamus voluptatum reprehenderit impedit.</p>
+
+            </div>
+        </div>
+        <div class="main2">
+            <div class="loginBox">
+                <div class="email"><input type="text" placeholder="Enter Your Email Address"> <span></span></div>
+                <div class="pw"><input type="password" placeholder="Enter Your Password"></div>
+                <div class="button"><button> Log In</button></div>
+                <div class="text"> <div class="border"></div>No account?</div>
+                <div class="newAcc"><button>Create New Account</button></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var gmail = "ayushacharya.htd057@gmail.com";
+        var password = "password";
+        const email = document.querySelector(".email input");
+        span1 = document.querySelector(".email span");
+        const pw = document.querySelector(".pw input");
+        const login = document.querySelector(".button button");
+        setInterval(() => {
+            if (email.value == gmail) {
+                span1.classList.remove("wrong");
+                span1.classList.add("correct");
+                login.style.background = "rgb(255, 72, 0)";
+                login.style.cursor = "pointer"
+            }
+            else{ 
+                span1.classList.add("wrong");
+                span1.classList.remove("correct");
+                login.style.background = "rgb(141, 101, 85)";
+                login.style.cursor = "initial"; 
+            }
+        }, 500);
+        login.addEventListener("click", ()=>{
+            if(login.style.cursor == "pointer"){
+                if (pw.value == "password") {
+            window.location.href = "2ndPage.html";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    color: white;
+    position: absolute;
+    top: 3.2rem;
+    right: 1.3rem;
+    width: 350px;
+    height: 450px;
+    background: rgb(48, 48, 48);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.display{
+    display: none;
+}
+.d-p-img{
+    margin: 0.4rem 0.6rem;
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: url(ayush.jpg) no-repeat center center/cover;
+}
+.d-part{
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    cursor: pointer;
+}
+.d-setting{
+    margin-top: 8px;
+}
+.d-profile{
+    margin: auto;
+    margin-bottom: 8px;
+    width: 98%;
+    border-radius: 5px;
+    height: 4.5rem;
+}
+.d-part:hover{
+    border-radius: 5px;
+    background: rgb(66, 66, 66);
+}
+.d-icon{
+    margin: 0.4rem 0.6rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgb(85, 85, 85);
+    font-size: 1.5rem;
+    display: grid;
+    place-content: center;
+}
+.d-f-container{
+    border-top: 1px rgb(189, 187, 187) solid;
+    border-bottom: 1px rgb(189, 187, 187) solid;
+    padding: 0.4rem 0;
+}
+.d-feedback{
+
+    padding: 0rem 0;
+}
+.copyright{
+    text-align: center;
+    margin-top: 1rem;
+}
+h3{
+    font-size: 1.2rem;
+}
+h4{
+font-size: 0.9rem;
+}
+.copyright{
+    font-size: 1rem;
+}

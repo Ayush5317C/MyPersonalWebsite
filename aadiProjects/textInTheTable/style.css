@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    z-index: -10;
+    background: url("table.jpg");
+    background-attachment: fixed;
+    height: 100vh;
+}
+h1{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 9rem;
+    width: 100vw;
+    height: 100vh;
+    background: url("table.jpg");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h1::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    content: attr(data-text);
+    text-shadow: 0px 0px 10px black, 0px 0px 20px black,0px 0px 25px black,0px 0px 30px black;
+    z-index: -1;
+}

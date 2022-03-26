@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="watch.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch On Sale
+    </title>
+</head>
+<body>
+    <div class="container">
+        <h1>On Sale</h1>
+        <img src="watch.png" alt="">
+        <div class="color-container">
+            <span class="green active" onclick = "activeChanger(event)"></span>
+            <i class="green"></i>
+            <span class="red" onclick = "activeChanger(event)"></span>
+            <i class="red"></i>
+            <span class="blue" onclick = "activeChanger(event)"></span>
+            <i class="blue"></i>
+            <span class="pink" onclick = "activeChanger(event)"></span>
+            <i class="pink"></i>
+            <span class="mixed" onclick = "activeChanger(event)"></span>
+            <i class="mixed"></i>
+        </div>
+        <h5 id="actual_price">$ 250</h5>
+        <h5 id="dis">81% discount</h5>
+        <h2>$ 47.5</h2>
+        <button class="buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+    </div>
+    <script>
+        function activeChanger(event){
+            document.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active");
+        }
+    </script>
+</body>
+</html>

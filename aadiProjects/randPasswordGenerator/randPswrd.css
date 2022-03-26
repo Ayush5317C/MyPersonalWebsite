@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background: rgb(70, 70, 70);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+.heading{
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    top: 15vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    color: transparent;
+    -webkit-text-stroke: rgb(15, 15, 15) 1.3px;
+}
+.passBox{
+    margin-top: 5rem;
+}
+#main{
+    border: none;
+    outline: none;
+    width: 20vw;
+    height: 4vw;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: rgb(231, 231, 231);
+    background: transparent;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1),
+                -1px -1px 2px rgb(27, 27, 27),
+                inset -1px -1px 1px rgba(255, 255, 255, 0.1),
+                inset 1px 1px 2px rgb(41, 41, 41);
+    border-radius: 5px;
+    letter-spacing: 2px;
+    margin-left: 5rem;
+}
+button{
+    border:none;
+    outline: none;
+    color: white;
+    font-size: 1.3rem;
+    padding: 10px;    
+    border-radius: 5px;
+    background: blue;
+}
+.button{
+    margin: 30px;
+    text-align: center;
+}
+.copy{
+    background: none;
+    box-shadow: 2px 2px 4px rgba(17, 17, 17, 0.1),
+                -1px -1px 3px rgb(22, 22, 22,0.7);
+    margin-left: 10px;
+}
+.copy.active{
+    animation: animate 1s linear;
+}
+@keyframes animate{
+    50%{
+        box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1),
+        -1px -1px 2px rgb(27, 27, 27),
+        inset -1px -1px 1px rgba(255, 255, 255, 0.1),
+        inset 1px 1px 2px rgb(41, 41, 41);
+    }
+    100%{
+        box-shadow: 2px 2px 4px rgba(31, 31, 31, 0.1),
+        -2px -2px 4px rgb(44, 44, 44);
+    }
+}

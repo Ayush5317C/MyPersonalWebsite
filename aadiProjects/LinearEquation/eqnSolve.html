@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="eqnSolve.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Of Linear Equation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>System of Linear Equation</h1>
+        <div class="box">
+            <h2>Put the coefficients, sybmol and constants. <i>for ex: 2x+5y = 9</i></h2>
+            <div class="equations">
+                <div class="equation1">
+                    <h3>1<sup>st</sup> equation:</h3>
+                    <input type="number" id="a1"><span>x</span><input type="text" class="sign" id="sign1"> <input type="number" id="b1"><span>y
+                        <b>=</b></span><input type="number" id="c1">
+                    <h3>2<sup>nd</sup> equation:</h3>
+                    <div class="equation2">
+                        <input type="number" id="a2"><span>x</span><input type="text" class="sign" id="sign2"> <input type="number" id="b2"><span>y
+                            <b>=</b></span><input type="number" id="c2">
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <h4>Results:</h4>
+                <div class="resultContent"></div>
+            </div>
+            <button>Calculate</button>
+        </div>
+    </div>
+    <script>
+        var resultContent = document.querySelector(".resultContent");
+        var calculate = document.querySelector("button");
+        calculate.addEventListener("click", ()=>{
+                      //for 2x2 matrix
+       //make the variable for all elements in determinant
+        var a1 = document.querySelector("#a1").value;
+        var sign1 = document.querySelector("#sign1").value;
+        var b1 = document.querySelector("#b1").value;
+        var c1 = document.querySelector("#c1").value;
+        var a2 = document.querySelector("#a2").value;
+        var sign2= document.querySelector("#sign2").value;
+        var b2 = document.querySelector("#b2").value;
+        var c2= document.querySelector("#c2").value;
+            console.log(a1);
+        //formulae cramer's rule
+        var D = ((sign1 +"1") * a1*b2 - (sign1 +"1")* b1*a2);
+        var D1 = ((sign1 +"1") * c1*b2 - (sign1 +"1") * b1*c2);
+        var D2 = (a1*c2 - c1*a2);
+        var x = (D1/D);
+        var y = (D2/D);
+        if(x.toFixed(2) % x.toFixed(0) == 0){
+        x = x;
+        }
+        else{
+            x = x.toFixed(2);
+        }
+        if(y.toFixed(2) % y.toFixed(0) == 0){
+        y = y;
+        }
+        else{
+            y = y.toFixed(2);
+        }
+            resultContent.innerHTML = `x = ${x} <br> y = ${y}`;
+        })
+       
+    </script>
+</body>
+
+</html>

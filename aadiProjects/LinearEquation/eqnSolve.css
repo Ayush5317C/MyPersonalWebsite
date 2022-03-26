@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    font-size: 3.4rem;
+}
+.box{
+    position: relative;
+    margin-top: 1rem;
+    width: 500px;
+    height: 500px;
+    background: rgb(34, 34, 34);
+    border-radius: 10px;
+}
+.equation1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+input{
+    background: transparent;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(8, 241, 8);
+    font-size: 1.5rem;
+    text-align: center;
+}
+h2{
+    width: 100%;
+    text-align: center;
+}
+span{
+    font-size: 1.5rem;
+    margin-right: 25px;
+}
+.sign{
+    width: 40px;
+    margin-right: 25px;
+}
+b{
+    margin-left: 25px;
+}
+.equations{
+    position: relative;
+}
+h3{
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 4.2rem;
+    font-size: 1.4rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h4{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+}
+.resultContent{
+    font-weight: bold;
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgb(0, 81, 255);
+    bottom: 1.7rem;
+    left: 11rem;
+}
+button{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: none;
+    outline: none;
+    box-shadow: 0px 0px 5px rgb(13, 255, 13);
+    border: 2px solid rgb(13, 255, 13);
+    padding: 7px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+button:hover{
+    background: rgb(0, 47, 255);
+    box-shadow: 0px 0px 5px rgb(0, 47, 255);
+    border: 2px solid rgb(0, 47, 255);
+}

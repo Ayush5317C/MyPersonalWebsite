@@ -1,0 +1,16 @@
+link for icons: <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+search:<i class="fa fa-search" aria-hidden="true"></i>
+home: <i class="fa fa-home" aria-hidden="true"></i>
+group: <i class="fa fa-users" aria-hidden="true"></i>
+video: <i class="fa fa-video-camera" aria-hidden="true"></i>
+address: <i class="fa fa-address-book-o" aria-hidden="true"></i>
+comment: <i class="fa fa-comment" aria-hidden="true"></i>
+plus: <i class="fa fa-plus" aria-hidden="true"></i>
+dropdown: <i class="fa fa-sort-desc" aria-hidden="true"></i>
+notification: <i class="fa fa-bell" aria-hidden="true"></i>
+
+//mid
+<i class="fa fa-envelope-open-o" aria-hidden="true"></i>: message
+<i class="fa fa-book" aria-hidden="true"></i>: books
+<i class="fa fa-bookmark-o" aria-hidden="true"></i>: saved
+<i class="fa fa-gamepad" aria-hidden="true"></i>: games

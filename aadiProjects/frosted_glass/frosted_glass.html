@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="frosted_glass.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frosted Glass</title>
+</head>
+<body>
+    <div class="container">{
+        <h1>Frosted Glass</h1>
+        <div class="glass"></div>
+    </div>
+</body>
+<script>
+    const glass = document.querySelector(".glass");
+    document.addEventListener("mousemove", (event)=>{
+    glass.style.left = `${event.clientX}px`;
+    glass.style.top = `${event.clientY}px`;
+    })
+
+</script>
+</html>

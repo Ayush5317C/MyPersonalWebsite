@@ -1,0 +1,18 @@
+360 deg = 60min, 60sec, 12hrs;
+
+1min = 360/60 = 6 deg, 1min = 60 sec, 1sec = 6/60 = 0.1 deg, s sec = 0.1*s deg;
+m min = m * 6 deg;
+
+
+
+1sec = 360/60 = 6deg;
+s sec = 6 * s deg;
+
+1hr = 360/12 = 30deg, 1hr = 60 min, 1min = 30/60 = 0.5 deg, m min = 0.5*m deg;
+h hr = 30 * h deg;
+
+final calc:
+
+m min = (m * 6) + 0.1 * s deg;
+s sec = 6 * s deg;
+h hr = (30 * h) + 0.5 * m deg;

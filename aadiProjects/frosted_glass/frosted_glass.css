@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: url(image.jpg) no-repeat center center/cover;
+    object-fit: cover;
+}
+h1{
+    color: white;
+    font-size: 8rem;
+    text-align: center;
+    margin-top: 8rem;
+    text-shadow: 3px -3px 5px rgb(0, 0, 0, 0.4);
+}
+.glass{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(3px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+}

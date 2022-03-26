@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: url("table.jpg") no-repeat center center/cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h5{
+    font-family: cursive;
+    font-size: 4rem;
+    position: absolute;
+    mix-blend-mode: overlay;
+}
+h5:nth-child(1){
+bottom: 70px;
+left: 30px;
+}
+h5:nth-child(2){
+top: 70px;
+right: 30px;
+transform: rotate(180deg);
+}
+.book{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: white;
+    box-shadow: -10px 10px 30px black;
+    transform: rotate(-20deg) skew(10deg);
+    perspective: 800px;
+    transition: 0.5s;
+}
+.book:hover{
+    transform: rotate(-20deg) skew(10deg) translate(20px, -20px);
+    box-shadow: -30px 30px 50px black;
+}
+.quote{
+    color: white;
+    position: absolute;
+    padding: 20px;
+    top: 40%;
+}
+.quote span{
+    display: block;
+    text-align: center;
+}
+.image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: url(Nature1.jpg) no-repeat center center/cover;
+}
+.book::before{
+    position: absolute;
+    left: -19.5px;
+    top: 8px;
+    content: "";
+    width: 20px;
+    height: 100%;
+    background: url(Nature1.jpg);
+    transform: skewY(-40deg);
+}
+.book::after{
+    position: absolute;
+    left: -10px;
+    bottom: -17px;
+    content: "";
+    height: 17.5px;
+    width: 100%;
+    background: rgb(206, 206, 206);
+    transform: skewX(-50deg);
+}
+h1{
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    top: 30%;
+    position: absolute;
+    text-align: center;
+}
+h3{
+    position: absolute;
+    width: 100%;
+    top: 81%;
+    text-align: center;
+    font-size: 2rem;
+    background-image: url(Nature2.jpg);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.developer{
+    background: linear-gradient(rgb(63, 63, 63),rgb(53, 53, 53));
+    color: white;
+    position: absolute;
+    top: 92.5%;
+    width: 100%;
+    height: 30px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

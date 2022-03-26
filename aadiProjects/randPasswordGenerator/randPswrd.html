@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="randPswrd.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Random Password <br>Generator</h1>
+        <div class="passBox">
+            <input type="text" id="main">
+            <button class="copy" onclick="copyFunc()">Copy</button>
+            <br>
+            <div class="button"><button>Generate</button></div>
+        </div>
+    </div>
+    <script>
+        var characters = "0123456789abcdefghijz@#$%^&*()_+{}[]";
+        var passLength = 10;
+        var main = document.querySelector("#main");
+        button = document.querySelector(".button");
+        var copy = document.querySelector(".copy");
+        button.addEventListener("click", ()=>{
+            var password = "";
+        for(i = 0; i< passLength; i++){
+            let randNum = Math.floor(Math.random()*characters.length)
+            password += characters.substring(randNum, randNum+1);
+        }
+            main.value = password;
+        })
+        const copyFunc = ()=>{
+            copy.classList.toggle("active");
+            setTimeout(() => {
+            copy.classList.toggle("active");
+            }, 1000);
+            main.select()
+            document.execCommand("Copy");
+            copy.focus()
+        }
+    </script>
+</body>
+</html>

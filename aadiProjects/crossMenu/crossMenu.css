@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: rgb(206, 206, 206);
+}
+.container{
+    box-shadow: inset 2px 2px 5px rgb(131, 131, 131), inset -1px -1px 5px white;
+    width: 28vw;
+    height: 50vh;
+    background-color: rgb(197, 197, 197);
+    display: grid;
+    place-content: center;
+}
+.box{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(223, 223, 223);
+    box-shadow: inset 2px 2px 5px rgb(131, 131, 131), inset -1px -1px 5px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.lines{
+    position: absolute;
+    display: block;
+    width: 70%;
+    height: 10%;
+    background: rgb(255, 255, 255);
+    box-shadow: inset 2px 2px 5px rgb(131, 131, 131), inset -1px -1px 5px white;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.lines:nth-child(1)
+{
+transform: translateY(-20px);
+}
+.active .lines:nth-child(1)
+{
+    transform: rotate(-45deg);
+}
+.active .lines:nth-child(2)
+{
+    transform: translateX(90px);
+}
+.active .lines:nth-child(3)
+{
+    transform: rotate(45deg);
+}
+.lines:nth-child(3)
+{
+transform: translateY(20px);
+}

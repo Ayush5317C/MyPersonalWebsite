@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="randColors.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randCOlors</title>
+</head>
+
+<body id="body">
+    <div class="refresh">refresh</div>
+    <div class="container">
+    </div>
+    <script>
+
+        const body = document.getElementById("body");
+        const hexChars = "0123456789abcdef"
+        const refresh = document.querySelector(".refresh");
+        var colorLength = 40;
+        container = document.querySelector(".container")
+        for (let i = 0; i < colorLength; i++) {
+                var box = document.createElement("div");
+                box.setAttribute("class", "box");
+                container.appendChild(box);
+            }
+        var box = document.querySelectorAll(".box")
+        refresh.addEventListener("click", () => {
+            box.forEach(element => {
+                hexVal = ""
+                for(let i = 0; i<6; i++){
+                randNum = Math.floor(Math.random()*16);
+                hexVal+=hexChars.substring(randNum,randNum+1);
+                }
+                hexVal = "#"+hexVal;
+                element.style.backgroundColor = hexVal;
+                element.innerHTML = hexVal;
+            });
+        })
+        box.forEach(element=>{
+            element.addEventListener("click",()=>{
+            var range = document.createRange();
+            var selection = window.getSelection();
+            range.selectNodeContents(element);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand("copy");
+            var ui = document.createElement("div");
+            ui.setAttribute("class","ui");
+            body.appendChild(ui);
+            ui.style.backgroundColor = element.innerHTML;
+            ui.innerHTML = element.innerHTML+"<br>"+"<span>copied</span>";
+            body.style.overflow = "hidden";
+            setTimeout(() => {
+                body.removeChild(ui);
+                body.style.overflow = "visible"
+            }, 1000);
+            })
+        })
+    </script>
+</body>
+
+</html>

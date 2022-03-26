@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+}
+.container{
+    position: relative;
+    top: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    perspective: 500px;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+}
+.img{
+    margin: 15px;
+    width: 250px;
+    height: 280px;
+    background: no-repeat center center/cover;
+    transform-style: preserve-3d;
+    transition: 0.2s;
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,rgba(0, 0, 0,0.5));
+}
+h1{
+    font-size: 3rem;
+    color: red;
+    position: absolute;
+    top: 2rem;
+    width: 100vw;
+    text-align: center;
+
+}
+
+.i1{
+background-image: url(solukhumbu.jpg);
+}
+.i2{
+background-image: url(temple.jpg);
+}
+.i3{
+background-image: url(aacs.jpg);
+}
+.i4{
+background-image: url(mt.jpg);
+}
+.container:hover>.img{
+    transform: rotateY(-20deg);
+}
+.container .img:hover{
+    transform: scale(1.1);
+}

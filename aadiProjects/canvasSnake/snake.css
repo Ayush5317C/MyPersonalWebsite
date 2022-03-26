@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background: rgb(130, 209, 157);
+}
+canvas{
+    background: rgb(191, 255, 166);
+}
+.score{
+    font-size: 3.3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    color: rgb(0, 212, 0);
+    -webkit-text-stroke: 3px rgb(0, 0, 0);
+    text-align: right;
+}

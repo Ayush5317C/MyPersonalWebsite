@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="text3d.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Shadows</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text" contenteditable="">
+            Text 3D
+        </div>
+    </div>
+    <script>
+        let text = document.querySelector(".text");
+        let shadow = "";
+        for(let i=0; i<7;){
+            i += 0.3;
+            shadow += `${(shadow? ",":"")} ${-i}px ${i}px 0 #d9d9d9`;
+            text.style.textShadow = shadow;
+        }
+    </script>
+</body>
+</html>

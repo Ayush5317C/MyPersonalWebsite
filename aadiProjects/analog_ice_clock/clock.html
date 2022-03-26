@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="clock.css">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+       <div class="clockContainer">
+            <div class="clock">
+                <span class="sui hr"></span>
+                <span class="sui min"></span>
+                <span class="sui sec"></span>
+            </div>
+       </div>
+   </div> 
+   <script>
+       const hr = document.querySelector(".hr");
+       const min = document.querySelector(".min");
+       const sec = document.querySelector(".sec");
+
+       setInterval(() => {
+            var dt = new Date();
+            hour = dt.getHours();
+            minutes = dt.getMinutes();
+            seconds = dt.getSeconds();
+            sec.style.transform = `rotate(${-90 + seconds*6}deg)`;
+            min.style.transform = `rotate(${-90 + minutes*6+seconds*0.1}deg)`;
+            if(hour>12){
+                hour -= 12
+                hr.style.transform = `rotate(${-90 + hour*30+minutes*0.5}deg)`;
+            }
+       }, 1000);
+   </script>
+</body>
+</html>
