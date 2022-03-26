@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sen';
+    scroll-behavior: smooth;
+}
+.navbar{
+    position: fixed;
+    top: 0%;
+    z-index: 999;
+    width: 100vw;
+    height: 8vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.navMenu{
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.navMenu.active{
+    color: #00E89A;
+    font-size: 1.1rem;
+}
+.navMenu:hover{
+    background: rgb(145, 145, 145);
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.Logo{
+    width: 20%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.navContent{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    margin-left: 10rem;
+}
+#mainHome{
+    height: 80vh;
+    background: #4b4b4b;
+    border-radius: 0 0 250px 0;
+    color: white;
+    display: flex;
+}
+.leftPart{
+width: 60%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.rightPart{
+width: 40%;
+}
+#homeSection img{
+    width: 400px;
+    height: 400px;
+}
+#quote{
+    font-size: 3rem;
+    color: #00E89A;
+}
+#belowQuote{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+#signIn{
+    font-size: 1.3rem;
+    color: white;
+    background: #0E6CFF;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    width: 140px;
+    padding: 0.6rem;
+    margin-top: 2.5rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#signIn:hover,#sendBtn:hover{
+    background: #0044ff;
+}
+#aboutSection{
+    margin-top: 20vh;
+}
+.aboutMain{
+    margin-top: 4rem;
+    display: flex;
+}
+#aboutName{
+    margin-left: 11rem;
+}
+.box{
+    width: 500px;
+    padding: 2rem 2rem 7rem;
+    border-radius: 30px;
+    box-shadow: 4px 4px 2px rgb(201, 201, 201), -2px -2px 2px rgb(201, 201, 201);
+}
+.myIntroBox>*{
+    margin-top: 1.5rem;
+}
+.myIntroBox p{
+    font-size: 1.1rem;
+}
+.myIntroBox #hiThere{
+    color: #00E89A;
+}
+#aboutName,#projectSectionName,#contactSectionName{
+    font-size: 3rem;
+    color: #00E89A;
+    letter-spacing: 4px;
+}
+.aboutLeft
+{
+    display: flex;
+    justify-content: center;
+}
+#aboutSection img{
+    width: 500px;
+    height: 500px;
+    margin-top: -2rem;
+}
+#projectSection{
+    margin-top: 5rem;
+}
+#projectSectionHead{
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+#projectSectionHead .topPart{
+    display: flex;
+}
+#projectTopInfo{
+    width: 500px;
+    margin-top: 2rem;
+}
+#projectTopInfo p{
+    font-size: 1.1rem;
+}
+#projectSectionHead img{
+    width: 350px;
+    height: 300px;
+    float: right;
+    margin-top: -40px;
+}
+.projectType{
+    padding: 0 10% 3rem;
+}
+.projectLeftPart{
+    width: 55%;
+}
+.projectsContainer{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.projectHead
+{
+    font-size: 2rem;
+    color: #00E89A;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+.projects{
+    position: relative;
+    cursor: pointer;
+}
+.projects::before{
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.226);
+    border-radius: 5px;
+}
+.projects:hover::before{
+    display: block; 
+}
+.projectsContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+#contactSection{
+
+display: flex;
+padding: 3rem 0 3rem 0;
+}
+#contactSection .leftPart{
+display: flex;
+align-items: center;
+justify-content: end;
+width: 40%;
+}
+#contactSection .rightPart{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 60%;
+}
+#contactSection img{
+width: 400px;
+height: 400px;
+}
+.formBox{
+padding: 3rem;
+margin-top: 2rem;
+width: 400px;
+font-size: 1.1rem;
+}
+#sendMessage{
+    font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+#contactSection input, #msg{
+width: 100%;
+padding: 1rem;
+height: 2rem;
+margin-top: 1.2rem;
+border-radius: 5px;
+border: none;
+outline: none;
+box-shadow: 2px 2px 2px rgb(196, 196, 196), -2px -2px 2px rgb(194, 194, 194);
+}
+#msg{
+    resize: none;
+    height: 7rem;
+}
+.fa-brands
+{
+    font-size: 1.6rem;
+    color: #1778F2;
+    cursor: pointer;
+}
+.fa-youtube{
+    color: red;
+}
+.fa-instagram-square
+{
+    background: linear-gradient(45deg, #405de6,#5851db, #833ab4, #c13584, #e1306c, #fd1d1d); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+#contactBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.contactIcons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    float: right;
+    margin-top: 4px;
+}
+#sendBtn{
+    background: #0E6CFF;
+    width: 80px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
