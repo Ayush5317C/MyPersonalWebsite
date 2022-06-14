@@ -1,0 +1,106 @@
+@media screen and (min-width: 768px) and (max-width: 1023px)
+{
+  *{
+      font-size: 90%;
+  }
+  #homeSection img{
+      width: 300px;
+      height: 300px;
+  }
+  #signIn{
+      width: 100px;
+  }
+  #aboutSection img{
+      width: 300px;
+      height: 300px;
+  }
+  #aboutSection .rightPart{
+      margin-top: 2rem;
+  }
+  .box{
+      width: 350px;
+      height: 350px;
+  }
+  .formBox{
+    height: 380px;
+  }
+  #projectTopInfo{
+      width: 100%;
+  }
+  #projectSectionHead img{
+      width: 250px;
+      height: 200px;
+      margin-top: 0px;
+  }
+  .projectsContainer{
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  }
+}
+@media screen and (max-width: 767px)
+{
+    *{
+        font-size: 90%;
+    }
+    .box{
+        width: 330px;
+    }
+    #mainHome{
+        border-radius: 0 0 200px 0;
+    }
+    .leftPart,.rightPart{
+        width: 100%;
+    }
+    #aboutSection .rightPart, #mainHome .rightPart{
+        display: none;
+    }
+    #contactSection .leftPart, .projectLeftPart{
+        display: none;
+    }
+    #contactSection .rightPart{
+        width: 100%;
+    }
+    #projectTopInfo{
+        width: auto;
+    }
+    #projectTopInfo p{
+        margin: 0 4rem;
+        text-align: justify;
+    }
+    .topicName{
+        text-align: center;
+    }
+    #aboutName{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 490px)
+{
+    #quote{
+        font-size: 2rem;
+    }
+    #belowQuote{
+        font-size: 1.1rem;
+    }
+    #mainHome{
+        border-radius: 0 0 100px 0;
+    }
+    .navContent{
+        position: absolute;
+        right: -500px;
+        top: 8vh;
+        width: 100vw;
+        flex-direction: column;
+        background-color: rgba(240, 240, 240, 0.993);
+        padding: 2rem;
+        transition: 0.8s;
+    }
+    .navContent a{
+        font-size: 1.3rem;
+    }
+    .menuIcon{
+        display: block;
+    }
+    .leftContent>*{
+        margin-top: 8rem;
+    }
+}
